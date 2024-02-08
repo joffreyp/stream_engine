@@ -97,7 +97,7 @@ def parse_qartod_dict(qartod_dict):
         qcconfig["qartod"]["gross_range_test"]["fail_span"] = fail_span
         qcconfig = str(qcconfig)
 
-    # do some data sanitation - valid JSON uses null instead None
+    # do some data sanitation - valid JSON uses null instead None and double quotes
     qcconfig = qcconfig.replace("'", '"')
     qcconfig = qcconfig.replace("None", "null")
     parameters = parameters.replace("None", "null")
@@ -239,5 +239,4 @@ def main(filepath=None):
 
 
 if __name__ == "__main__":
-if __name__ == '__main__':
     main()
