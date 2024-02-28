@@ -100,6 +100,7 @@ def parse_qartod_dict(qartod_dict):
     # do some data sanitation - valid JSON uses null instead None and double quotes
     qcconfig = qcconfig.replace("'", '"')
     qcconfig = qcconfig.replace("None", "null")
+    qcconfig = qcconfig.replace("nan", "NaN")
     parameters = parameters.replace("None", "null")
     source = qartod_dict.get("source")
     if not source:
